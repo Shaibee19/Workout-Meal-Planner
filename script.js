@@ -155,8 +155,8 @@ function goToNextDay() {
 
 // Handle quick add form submission
 function handleQuickAdd() {
-  const input = document.getElementById("quick-meal-input");
-  const select = document.getElementById("quick-meal-type");
+  const input = document.getElementById("quick__meal--input");
+  const select = document.getElementById("quick__meal--type");
 
   const mealText = input.value.trim();
   const mealType = select.value;
@@ -207,15 +207,15 @@ function handleAddMealClick(mealType) {
 // Setup all event listeners
 function setupEventListeners() {
   // Day navigation buttons
-  const prevButton = document.getElementById("prev-day");
-  const nextButton = document.getElementById("next-day");
+  const prevButton = document.getElementById("prev__day");
+  const nextButton = document.getElementById("next__day");
 
   if (prevButton) prevButton.addEventListener("click", goToPreviousDay);
   if (nextButton) nextButton.addEventListener("click", goToNextDay);
 
   // Quick add form
-  const quickAddBtn = document.getElementById("quick-add-btn");
-  const quickInput = document.getElementById("quick-meal-input");
+  const quickAddBtn = document.getElementById("quick__add--btn");
+  const quickInput = document.getElementById("quick__meal--input");
 
   if (quickAddBtn) quickAddBtn.addEventListener("click", handleQuickAdd);
   if (quickInput) {
@@ -227,9 +227,10 @@ function setupEventListeners() {
   }
 
   // Add meal buttons
-  document.querySelectorAll(".add-meal-btn").forEach((button) => {
-    const mealType = button.getAttribute("data-meal");
+  document.querySelectorAll(".add__meal--btn").forEach((button) => {
+    const mealType = button.getAttribute("data__meal");
     button.addEventListener("click", () => handleAddMealClick(mealType));
+    console.log("Hello");
   });
 }
 
@@ -248,7 +249,7 @@ function setupKeyboardShortcuts() {
     else if (e.key === "a" || e.key === "A") {
       if (e.target.tagName !== "INPUT") {
         e.preventDefault();
-        const quickInput = document.getElementById("quick-meal-input");
+        const quickInput = document.getElementById("quick__meal--input");
         if (quickInput) quickInput.focus();
       }
     }
