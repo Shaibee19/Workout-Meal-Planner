@@ -230,7 +230,6 @@ function setupEventListeners() {
   document.querySelectorAll(".add__meal--btn").forEach((button) => {
     const mealType = button.getAttribute("data__meal");
     button.addEventListener("click", () => handleAddMealClick(mealType));
-    console.log("Hello");
   });
 }
 
