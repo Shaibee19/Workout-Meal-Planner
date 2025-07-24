@@ -135,6 +135,19 @@ header .logo img { /* Target logo image specifically in the main header */
   background-color: rgb(89, 82, 209); /* Active button accent color */
 }
 
+.main__content {
+  flex-grow: 1; /* Allows main content to take available space */
+  padding: 20px;
+  padding-top: 50px; /* Added space from the top */
+  display: flex; /* Enables flex layout for its children (e.g., calculator) */
+  justify-content: center; /* Center items horizontally */
+  align-items: flex-start; /* Aligns items to the top */
+  gap: 20px; /* Space between flex items */
+  height: 100%;
+  overflow: auto; /* Allow scrolling within main content if needed */
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
 /* MAIN CONTENT */
 .planner__header {
     margin-bottom: 25px;
